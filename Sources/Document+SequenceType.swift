@@ -5,10 +5,9 @@
 //  Created by Robbert Brandsma on 03-02-16.
 //  Copyright © 2016 Robbert Brandsma. All rights reserved.
 //
-
 import Foundation
 
-extension Document : Sequence {
+extension Document : SequenceType {
     /// As required by and documented in `SequenceType`
     public var startIndex: Int {
         return elements.startIndex
@@ -21,7 +20,7 @@ extension Document : Sequence {
     
     /// As required by and documented in `SequenceType`
     public func index(forKey key: String) -> Int? {
-        return elements.index(where:)(where: { $0.0 == key })
+        return elements.indexOf({ $0.0 == key })
     }
     
     /// As required by and documented in `SequenceType`
@@ -46,7 +45,7 @@ extension Document : Sequence {
             if case .nothing = newValue {
                 let shouldKeepArray = self.validatesAsArray()
                 
-                elements.remove(at: key)
+                elements.removeAtIndex(key)
                 
                 if shouldKeepArray {
                     self.enforceArray()
@@ -60,7 +59,7 @@ extension Document : Sequence {
     }
     
     /// As required by and documented in `SequenceType`
-    public mutating func updateValue(_ value: Value, forKey key: String) -> Value? {
+    public mutating func updateValue(value: Value, forKey key: String) -> Value? {
         guard let indexKey = self.index(forKey: key) else {
             elements.append((key, value))
             return nil
@@ -75,7 +74,7 @@ extension Document : Sequence {
     
     /// As required by and documented in `SequenceType`
     public mutating func remove(at index: Int) -> (String, Value) {
-        return elements.remove(at: index)
+        return elements.removeAtIndex(index)
     }
     
     /// As required by and documented in `SequenceType`
@@ -84,7 +83,7 @@ extension Document : Sequence {
             return nil
         }
         
-        return elements.remove(at: index).1
+        return elements.removeAtIndex(index).1
     }
     
     /// As required by and documented in `SequenceType`
@@ -98,10 +97,10 @@ extension Document : Sequence {
     }
     
     /// As required by and documented in `SequenceType`
-    public func makeIterator() -> AnyIterator<(String, Value)> {
+    public func generate() -> AnyGenerator<(String, Value)> {
         var i = -1
         
-        return AnyIterator {
+        return AnyGenerator {
             i += 1
             
             return i < self.elements.count ? self.elements[i] : nil

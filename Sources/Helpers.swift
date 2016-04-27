@@ -5,7 +5,6 @@
 //  Created by Robbert Brandsma on 18-04-16.
 //
 //
-
 import Foundation
 
 public extension String {
@@ -28,7 +27,7 @@ public extension String {
     }
     
     /// Instantiate a string from BSON (UTF8) data, including the length of the string.
-    public static func instantiate(bsonData data: [UInt8], consumedBytes: inout Int) throws -> String {
+    public static func instantiate(bsonData data: [UInt8], inout consumedBytes: Int) throws -> String {
         // Check for null-termination and at least 5 bytes (length spec + terminator)
         guard data.count >= 5 && data.last == 0x00 else {
             throw DeserializationError.InvalidLastElement
@@ -72,12 +71,12 @@ public extension String {
     }
     
     /// Instantiate a String from a CString (a null terminated string of UTF8 characters, not containing null)
-    public static func instantiateFromCString(bsonData data: [UInt8], consumedBytes: inout Int) throws -> String {
+    public static func instantiateFromCString(bsonData data: [UInt8], inout consumedBytes: Int) throws -> String {
         guard data.contains(0x00) else {
             throw DeserializationError.ParseError
         }
         
-        guard let stringData = data.split(separator: 0x00, maxSplits: 1, omittingEmptySubsequences: false).first else {
+        guard let stringData = data.split(0x00, maxSplit: 1, allowEmptySlices: false).first else {
             throw DeserializationError.ParseError
         }
         
@@ -104,7 +103,7 @@ public extension Int16 {
             throw DeserializationError.InvalidElementSize
         }
         
-        let integer = UnsafePointer<Int16>(data).pointee
+        let integer = UnsafePointer<Int16>(data).memory
         return integer
     }
 }
@@ -120,7 +119,7 @@ public extension Int32 {
             throw DeserializationError.InvalidElementSize
         }
         
-        let integer = UnsafePointer<Int32>(data).pointee
+        let integer = UnsafePointer<Int32>(data).memory
         return integer
     }
 }
@@ -136,7 +135,7 @@ public extension Int64 {
             throw DeserializationError.InvalidElementSize
         }
         
-        let integer = UnsafePointer<Int64>(data).pointee
+        let integer = UnsafePointer<Int64>(data).memory
         return integer
     }
 }

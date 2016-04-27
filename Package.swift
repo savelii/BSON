@@ -6,11 +6,6 @@ import PackageDescription
 
 let package = Package(name: "BSON",
     exclude: [],
-    dependencies: [],
-    targets: [
-        Target(name: "BSON"),
-        Target(name: "Tests",
-            dependencies: [.Target(name: "BSON")])
-    ]
+    dependencies: []
 )
 

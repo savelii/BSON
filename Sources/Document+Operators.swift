@@ -5,7 +5,6 @@
 //  Created by Robbert Brandsma on 15-03-16.
 //  Copyright © 2016 Robbert Brandsma. All rights reserved.
 //
-
 import Foundation
 
 /// Combines the left and right document.
@@ -17,14 +16,14 @@ public func +(lhs: Document, rhs: Document) -> Document {
     var new = lhs
     if areArrays {
         new.elements += rhs.elements
-    
+        
         new.enforceArray()
         
         return new
     } else {
         for (key, value) in rhs.elements {
-            if let index = new.elements.index(where: {$0.0 == key}) {
-                new.elements.remove(at: index)
+            if let index = new.elements.indexOf({$0.0 == key}) {
+                new.elements.removeAtIndex(index)
             }
             
             new.elements.append((key, value))
@@ -33,6 +32,6 @@ public func +(lhs: Document, rhs: Document) -> Document {
     }
 }
 
-public func +=(lhs: inout Document, rhs: Document) {
+public func +=(inout lhs: Document, rhs: Document) {
     lhs = lhs + rhs
 }

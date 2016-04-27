@@ -17,10 +17,9 @@ import XCTest
 class BSONInternalTests: XCTestCase {
     static var allTests : [(String, BSONInternalTests -> () throws -> Void)] {
         return [
-            ("testCStringSerialization", testCStringSerialization),
-            ("testInt16", testInt16),
-            ("testRegexInit", testRegexInit),
-            // Other tests go here
+                   ("testCStringSerialization", testCStringSerialization),
+                   ("testRegexInit", testRegexInit),
+                   // Other tests go here
         ]
     }
     
@@ -34,16 +33,6 @@ class BSONInternalTests: XCTestCase {
         
         let generatedData = result.cStringBsonData
         XCTAssertEqual(generatedData, rawData, "Converting a String to CString BSON data results in the correct data")
-    }
-    
-    func testInt16() {
-        let int16 = try! Int16.instantiate(bsonData: [0x01, 0x02])
-        XCTAssert(int16 == 513)
-        
-        do {
-            let _ = try Int16.instantiate(bsonData: [0x01])
-            XCTFail()
-        } catch {}
     }
     
     func testRegexInit() {

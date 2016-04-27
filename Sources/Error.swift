@@ -5,11 +5,10 @@
 //  Created by Robbert Brandsma on 23-01-16.
 //  Copyright © 2016 Robbert Brandsma. All rights reserved.
 //
-
 import Foundation
 
 /// All errors that can occur when (de)serializing BSON
-public enum DeserializationError : ErrorProtocol {
+public enum DeserializationError : ErrorType {
     /// The Document doesn't have a valid length
     case InvalidDocumentLength
     

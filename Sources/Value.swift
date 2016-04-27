@@ -5,7 +5,6 @@
 //  Created by Robbert Brandsma on 18-04-16.
 //
 //
-
 import Foundation
 
 public enum BinarySubtype {

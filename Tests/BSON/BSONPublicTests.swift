@@ -19,23 +19,23 @@ import BSON
 class BSONPublicTests: XCTestCase {
     static var allTests : [(String, BSONPublicTests -> () throws -> Void)] {
         return [
-            ("testCompare", testCompare),
-            ("testBasics", testBasics),
-            ("testBinarySerialization", testBinarySerialization ),
-            ("testMultipleDocumentInstantiation", testMultipleDocumentInstantiation ),
-            ("testDocumentOne", testDocumentOne),
-            ("testStringSerialization", testStringSerialization),
-            ("testDocumentSerialization", testDocumentSerialization),
-            ("testArrayConvertableToDocument", testArrayConvertableToDocument),
-            ("testDictionaryConvertableToDocument", testDictionaryConvertableToDocument),
-            ("testObjectIdSerialization", testObjectIdSerialization),
-            ("testDocumentSubscript", testDocumentSubscript),
-            ("testDocumentInitialisation", testDocumentInitialisation),
-            ("testAwesomeDocuments", testAwesomeDocuments),
-            ("testDocumentSequenceType", testDocumentSequenceType),
-            ("testDeserializationPerformance", testDeserializationPerformance),
-            ("testSerializationPerformance", testSerializationPerformance),
-            // Other tests go here
+                   ("testCompare", testCompare),
+                   ("testBasics", testBasics),
+                   ("testBinarySerialization", testBinarySerialization ),
+                   ("testMultipleDocumentInstantiation", testMultipleDocumentInstantiation ),
+                   ("testDocumentOne", testDocumentOne),
+                   ("testStringSerialization", testStringSerialization),
+                   ("testDocumentSerialization", testDocumentSerialization),
+                   ("testArrayConvertableToDocument", testArrayConvertableToDocument),
+                   ("testDictionaryConvertableToDocument", testDictionaryConvertableToDocument),
+                   ("testObjectIdSerialization", testObjectIdSerialization),
+                   ("testDocumentSubscript", testDocumentSubscript),
+                   ("testDocumentInitialisation", testDocumentInitialisation),
+                   ("testAwesomeDocuments", testAwesomeDocuments),
+                   ("testDocumentSequenceType", testDocumentSequenceType),
+                   ("testDeserializationPerformance", testDeserializationPerformance),
+                   ("testSerializationPerformance", testSerializationPerformance),
+                   // Other tests go here
         ]
     }
     
@@ -47,8 +47,8 @@ class BSONPublicTests: XCTestCase {
     
     func testBasics() {
         var document: Document = [
-            "hello": "I am a document created trough the public API",
-            "subdocument": ["hello", "mother of god"]
+                                     "hello": "I am a document created trough the public API",
+                                     "subdocument": ["hello", "mother of god"]
         ]
         
         XCTAssert(document.count == 2)
@@ -91,19 +91,19 @@ class BSONPublicTests: XCTestCase {
         
         // the same as "expected" but as an object instead of list-of-bytes
         let kittenDocument: Document = [
-            "doubleTest": 0.04,
-            "stringTest": "foo",
-            "documentTest": [
-                "documentSubDoubleTest": 13.37,
-                "subArray": ["henk", "fred", "kaas", "goudvis"]
+                                           "doubleTest": 0.04,
+                                           "stringTest": "foo",
+                                           "documentTest": [
+                                                               "documentSubDoubleTest": 13.37,
+                                                               "subArray": ["henk", "fred", "kaas", "goudvis"]
             ],
-            "nonRandomObjectId": try! ~ObjectId("0123456789ABCDEF01234567"),
-            "currentTime": .dateTime(NSDate(timeIntervalSince1970: Double(1453589266))),
-            "cool32bitNumber": .int32(9001),
-            "cool64bitNumber": 21312153544,
-            "code": .javascriptCode("console.log(\"Hello there\");"),
-            "codeWithScope": .javascriptCodeWithScope(code: "console.log(\"Hello there\");", scope: ["hey": "hello"]),
-            "nothing": .null
+                                           "nonRandomObjectId": try! ~ObjectId("0123456789ABCDEF01234567"),
+                                           "currentTime": .dateTime(NSDate(timeIntervalSince1970: Double(1453589266))),
+                                           "cool32bitNumber": .int32(9001),
+                                           "cool64bitNumber": 21312153544,
+                                           "code": .javascriptCode("console.log(\"Hello there\");"),
+                                           "codeWithScope": .javascriptCodeWithScope(code: "console.log(\"Hello there\");", scope: ["hey": "hello"]),
+                                           "nothing": .null
         ]
         
         // So do these 2 equal documents match?
@@ -259,9 +259,9 @@ class BSONPublicTests: XCTestCase {
     
     func testDocumentSubscript() {
         let testDocument: Document = ["a": 0, "b": .null, "c": [
-            "aa": "bb", "cc": [1, 2, 3]
+                                                                   "aa": "bb", "cc": [1, 2, 3]
             ],
-            "d": 3.14]
+                                      "d": 3.14]
         
         XCTAssert(testDocument["a"].int == 0)
         
@@ -325,19 +325,19 @@ class BSONPublicTests: XCTestCase {
         let expected: [UInt8] = [121, 1, 0, 0, 1, 100, 111, 117, 98, 108, 101, 84, 101, 115, 116, 0, 123, 20, 174, 71, 225, 122, 164, 63, 2, 115, 116, 114, 105, 110, 103, 84, 101, 115, 116, 0, 4, 0, 0, 0, 102, 111, 111, 0, 3, 100, 111, 99, 117, 109, 101, 110, 116, 84, 101, 115, 116, 0, 102, 0, 0, 0, 1, 100, 111, 99, 117, 109, 101, 110, 116, 83, 117, 98, 68, 111, 117, 98, 108, 101, 84, 101, 115, 116, 0, 61, 10, 215, 163, 112, 189, 42, 64, 4, 115, 117, 98, 65, 114, 114, 97, 121, 0, 56, 0, 0, 0, 2, 48, 0, 5, 0, 0, 0, 104, 101, 110, 107, 0, 2, 49, 0, 5, 0, 0, 0, 102, 114, 101, 100, 0, 2, 50, 0, 5, 0, 0, 0, 107, 97, 97, 115, 0, 2, 51, 0, 8, 0, 0, 0, 103, 111, 117, 100, 118, 105, 115, 0, 0, 0, 7, 110, 111, 110, 82, 97, 110, 100, 111, 109, 79, 98, 106, 101, 99, 116, 73, 100, 0, 1, 35, 69, 103, 137, 171, 205, 239, 1, 35, 69, 103, 9, 99, 117, 114, 114, 101, 110, 116, 84, 105, 109, 101, 0, 80, 254, 171, 112, 82, 1, 0, 0, 16, 99, 111, 111, 108, 51, 50, 98, 105, 116, 78, 117, 109, 98, 101, 114, 0, 41, 35, 0, 0, 18, 99, 111, 111, 108, 54, 52, 98, 105, 116, 78, 117, 109, 98, 101, 114, 0, 200, 167, 77, 246, 4, 0, 0, 0, 13, 99, 111, 100, 101, 0, 28, 0, 0, 0, 99, 111, 110, 115, 111, 108, 101, 46, 108, 111, 103, 40, 34, 72, 101, 108, 108, 111, 32, 116, 104, 101, 114, 101, 34, 41, 59, 0, 15, 99, 111, 100, 101, 87, 105, 116, 104, 83, 99, 111, 112, 101, 0, 56, 0, 0, 0, 28, 0, 0, 0, 99, 111, 110, 115, 111, 108, 101, 46, 108, 111, 103, 40, 34, 72, 101, 108, 108, 111, 32, 116, 104, 101, 114, 101, 34, 41, 59, 0, 20, 0, 0, 0, 2, 104, 101, 121, 0, 6, 0, 0, 0, 104, 101, 108, 108, 111, 0, 0, 10, 110, 111, 116, 104, 105, 110, 103, 0, 0]
         
         let kittenDocument: Document = [
-            "doubleTest": 0.04,
-            "stringTest": "foo",
-            "documentTest": [
-                "documentSubDoubleTest": 13.37,
-                "subArray": ["henk", "fred", "kaas", "goudvis"]
+                                           "doubleTest": 0.04,
+                                           "stringTest": "foo",
+                                           "documentTest": [
+                                                               "documentSubDoubleTest": 13.37,
+                                                               "subArray": ["henk", "fred", "kaas", "goudvis"]
             ],
-            "nonRandomObjectId": try! ~ObjectId("0123456789ABCDEF01234567"),
-            "currentTime": .dateTime(NSDate(timeIntervalSince1970: Double(1453589266))),
-            "cool32bitNumber": .int32(9001),
-            "cool64bitNumber": 21312153544,
-            "code": .javascriptCode("console.log(\"Hello there\");"),
-            "codeWithScope": .javascriptCodeWithScope(code: "console.log(\"Hello there\");", scope: ["hey": "hello"]),
-            "nothing": .null
+                                           "nonRandomObjectId": try! ~ObjectId("0123456789ABCDEF01234567"),
+                                           "currentTime": .dateTime(NSDate(timeIntervalSince1970: Double(1453589266))),
+                                           "cool32bitNumber": .int32(9001),
+                                           "cool64bitNumber": 21312153544,
+                                           "code": .javascriptCode("console.log(\"Hello there\");"),
+                                           "codeWithScope": .javascriptCodeWithScope(code: "console.log(\"Hello there\");", scope: ["hey": "hello"]),
+                                           "nothing": .null
         ]
         
         XCTAssert(expected == kittenDocument.bsonData)
@@ -395,23 +395,23 @@ class BSONPublicTests: XCTestCase {
     
     func testDocumentSequenceType() {
         var kittenDocument: Document = [
-            "doubleTest": 0.04,
-            "stringTest": "foo",
-            "documentTest": [
-                "documentSubDoubleTest": 13.37,
-                "subArray": ["henk", "fred", "kaas", "goudvis"]
+                                           "doubleTest": 0.04,
+                                           "stringTest": "foo",
+                                           "documentTest": [
+                                                               "documentSubDoubleTest": 13.37,
+                                                               "subArray": ["henk", "fred", "kaas", "goudvis"]
             ],
-            "nonRandomObjectId": try! ~ObjectId("0123456789ABCDEF01234567"),
-            "currentTime": ~NSDate(timeIntervalSince1970: Double(1453589266)),
-            "cool32bitNumber": .int32(9001),
-            "cool64bitNumber": 21312153544,
-            "code": .javascriptCode("console.log(\"Hello there\");"),
-            "codeWithScope": .javascriptCodeWithScope(code: "console.log(\"Hello there\");", scope: ["hey": "hello"]),
-            "nothing": .null
+                                           "nonRandomObjectId": try! ~ObjectId("0123456789ABCDEF01234567"),
+                                           "currentTime": ~NSDate(timeIntervalSince1970: Double(1453589266)),
+                                           "cool32bitNumber": .int32(9001),
+                                           "cool64bitNumber": 21312153544,
+                                           "code": .javascriptCode("console.log(\"Hello there\");"),
+                                           "codeWithScope": .javascriptCodeWithScope(code: "console.log(\"Hello there\");", scope: ["hey": "hello"]),
+                                           "nothing": .null
         ]
         
         let arrayThingy: Document = [
-            "a", "b", 3, true, "kaas", "a"
+                                        "a", "b", 3, true, "kaas", "a"
         ]
         
         XCTAssert(arrayThingy[0].stringValue == "a")
@@ -453,7 +453,7 @@ class BSONPublicTests: XCTestCase {
             
             let bsonData = kittenDocument.bsonData
             
-            measure {
+            measureBlock {
                 for _ in 0..<1000 {
                     let _ = try! Document(data: bsonData)
                 }
@@ -479,7 +479,7 @@ class BSONPublicTests: XCTestCase {
                                                "nothing": .null
             ]
             
-            measure {
+            measureBlock {
                 for _ in 0..<1000 {
                     let _ = kittenDocument.bsonData
                 }

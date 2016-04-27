@@ -5,7 +5,6 @@
 //  Created by Robbert Brandsma on 18-04-16.
 //
 //
-
 import Foundation
 
 extension Value {
@@ -17,7 +16,7 @@ extension Value {
             }
         case string(let value):
             var byteArray = Value.int32(value.utf8.count + 1).bsonData
-            byteArray.append(contentsOf: value.utf8)
+            byteArray.appendContentsOf(value.utf8)
             byteArray.append(0x00)
             return byteArray
         case document(let value):

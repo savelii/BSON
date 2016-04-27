@@ -5,7 +5,6 @@
 //  Created by Joannis Orlandos on 23/01/16.
 //  Copyright © 2016 Robbert Brandsma. All rights reserved.
 //
-
 import Foundation
 
 #if os(Linux)
@@ -63,7 +62,7 @@ public struct ObjectId {
         
         var data = [UInt8]()
         
-        var gen = hexString.characters.makeIterator()
+        var gen = hexString.characters.generate()
         while let c1 = gen.next(), c2 = gen.next() {
             let s = String([c1, c2])
             
@@ -95,12 +94,14 @@ public struct ObjectId {
     
     public var hexString: String {
         let data = [storage.0, storage.1, storage.2, storage.3, storage.4, storage.5, storage.6, storage.7, storage.8, storage.9, storage.10, storage.11]
-        return data.map {
+        
+        return data.map{
             var s = String($0, radix: 16, uppercase: false)
+            
             while s.characters.count < 2 {
                 s = "0" + s
             }
             return s
-            }.joined(separator: "")
+        }.joinWithSeparator("")
     }
 }

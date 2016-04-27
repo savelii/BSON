@@ -5,7 +5,6 @@
 //  Created by Robbert Brandsma on 03-02-16.
 //  Copyright © 2016 Robbert Brandsma. All rights reserved.
 //
-
 import Foundation
 
 extension Document {
@@ -39,6 +38,6 @@ extension Document {
         var myData = self.bsonData
         let nsData = NSData(bytes: &myData, length: myData.count)
         
-        try nsData.write(toFile: path)
+        try nsData.writeToFile(path, options: [])
     }
 }

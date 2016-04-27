@@ -5,7 +5,6 @@
 //  Created by Robbert Brandsma on 23-01-16.
 //  Copyright © 2016 Robbert Brandsma. All rights reserved.
 //
-
 import Foundation
 
 /// The base type for all BSON data, defined in the spec as:
@@ -33,7 +32,7 @@ public struct Document {
     ///
     /// Will throw a `DeserializationError` when the document is invalid.
     public init(data: NSData) throws {
-        var byteArray = [UInt8](repeating: 0, count: data.length)
+        var byteArray = [UInt8](count: data.length, repeatedValue: 0)
         data.getBytes(&byteArray, length: byteArray.count)
         
         var 🖕 = 0
@@ -50,14 +49,14 @@ public struct Document {
     }
     
     /// Internal initializer used by all other initializers and for initializing embedded documents.
-    internal init(data: [UInt8], consumedBytes: inout Int) throws {
+    internal init(data: [UInt8], inout consumedBytes: Int) throws {
         // A BSON document cannot be smaller than 5 bytes (which would be an empty document)
         guard data.count >= 5 else {
             throw DeserializationError.InvalidDocumentLength
         }
         
         // The first four bytes of a document represent the total size of the document
-        let documentLength = Int(Int32(littleEndian: UnsafePointer<Int32>(data).pointee))
+        let documentLength = Int(Int32(littleEndian: UnsafePointer<Int32>(data).memory))
         guard data.count >= documentLength else {
             throw DeserializationError.InvalidDocumentLength
         }
@@ -79,7 +78,7 @@ public struct Document {
             }
             
             // Now that we have the type, parse the name
-            guard let stringTerminatorIndex = data[position..<documentLength].index(of:)(of: 0) else {
+            guard let stringTerminatorIndex = data[position..<documentLength].indexOf(0) else {
                 throw DeserializationError.ParseError
             }
             
@@ -99,7 +98,7 @@ public struct Document {
                     throw DeserializationError.InvalidElementSize
                 }
                 
-                let double = UnsafePointer<Double>(Array(data[position..<position+8])).pointee
+                let double = UnsafePointer<Double>(Array(data[position..<position+8])).memory
                 value = .double(double)
                 
                 position += 8
@@ -183,7 +182,7 @@ public struct Document {
             case 0x0A: // null
                 value = .null
             case 0x0B: // regular expression
-                let k = data.split(separator: 0, maxSplits: 2, omittingEmptySubsequences: false)
+                let k = data.split(0, maxSplit: 2, allowEmptySlices: false)
                 guard k.count >= 2 else {
                     throw DeserializationError.InvalidElementSize
                 }
@@ -286,7 +285,7 @@ extension Document {
             
             // The first four bytes of a document represent the total size of the document
             let lengthBytes = Array(data[position..<position+4])
-            let documentLength = Int(Int32(littleEndian: UnsafePointer<Int32>(lengthBytes).pointee))
+            let documentLength = Int(Int32(littleEndian: UnsafePointer<Int32>(lengthBytes).memory))
             
             guard data.count >= position + documentLength else {
                 return (consumed: position, found: found)

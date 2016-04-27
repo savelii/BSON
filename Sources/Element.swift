@@ -5,7 +5,6 @@
 //  Created by Robbert Brandsma on 23-01-16.
 //  Copyright © 2016 Robbert Brandsma. All rights reserved.
 //
-
 import Foundation
 
 /// Represents the estimated length of a BSON type. If the length varies, .NullTerminated or .Undefined is used.
