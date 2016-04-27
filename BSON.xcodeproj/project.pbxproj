@@ -1,0 +1,384 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		_LinkFileRef_BSON /* libBSON.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = "_____Product_BSON" /* libBSON.dylib */; };
+		"__src_cc_ref_Sources/Document+LiteralConvertibles.swift" /* Document+LiteralConvertibles.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Sources/Document+LiteralConvertibles.swift" /* Document+LiteralConvertibles.swift */; };
+		"__src_cc_ref_Sources/Document+Operators.swift" /* Document+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Sources/Document+Operators.swift" /* Document+Operators.swift */; };
+		"__src_cc_ref_Sources/Document+SequenceType.swift" /* Document+SequenceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Sources/Document+SequenceType.swift" /* Document+SequenceType.swift */; };
+		"__src_cc_ref_Sources/Document+Serialization.swift" /* Document+Serialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Sources/Document+Serialization.swift" /* Document+Serialization.swift */; };
+		__src_cc_ref_Sources/Document.swift /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = __PBXFileRef_Sources/Document.swift /* Document.swift */; };
+		__src_cc_ref_Sources/Element.swift /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = __PBXFileRef_Sources/Element.swift /* Element.swift */; };
+		__src_cc_ref_Sources/Error.swift /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = __PBXFileRef_Sources/Error.swift /* Error.swift */; };
+		__src_cc_ref_Sources/Helpers.swift /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = __PBXFileRef_Sources/Helpers.swift /* Helpers.swift */; };
+		__src_cc_ref_Sources/ObjectId.swift /* ObjectId.swift in Sources */ = {isa = PBXBuildFile; fileRef = __PBXFileRef_Sources/ObjectId.swift /* ObjectId.swift */; };
+		"__src_cc_ref_Sources/Value+Comparing.swift" /* Value+Comparing.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Sources/Value+Comparing.swift" /* Value+Comparing.swift */; };
+		"__src_cc_ref_Sources/Value+Extraction.swift" /* Value+Extraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Sources/Value+Extraction.swift" /* Value+Extraction.swift */; };
+		"__src_cc_ref_Sources/Value+LiteralConvertibles.swift" /* Value+LiteralConvertibles.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Sources/Value+LiteralConvertibles.swift" /* Value+LiteralConvertibles.swift */; };
+		"__src_cc_ref_Sources/Value+Serialization.swift" /* Value+Serialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Sources/Value+Serialization.swift" /* Value+Serialization.swift */; };
+		"__src_cc_ref_Sources/Value+Subscript.swift" /* Value+Subscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Sources/Value+Subscript.swift" /* Value+Subscript.swift */; };
+		__src_cc_ref_Sources/Value.swift /* Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = __PBXFileRef_Sources/Value.swift /* Value.swift */; };
+		__src_cc_ref_Sources/ValueConvertible.swift /* ValueConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = __PBXFileRef_Sources/ValueConvertible.swift /* ValueConvertible.swift */; };
+		__src_cc_ref_Tests/BSON/BSONInternalTests.swift /* BSONInternalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = __PBXFileRef_Tests/BSON/BSONInternalTests.swift /* BSONInternalTests.swift */; };
+		__src_cc_ref_Tests/BSON/BSONPublicTests.swift /* BSONPublicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = __PBXFileRef_Tests/BSON/BSONPublicTests.swift /* BSONPublicTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0AD853361CD17AB1000AA614 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = __RootObject_ /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "______Target_BSON";
+			remoteInfo = BSON;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		__PBXFileRef_Package.swift /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = SOURCE_ROOT; };
+		"__PBXFileRef_Sources/Document+LiteralConvertibles.swift" /* Document+LiteralConvertibles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Document+LiteralConvertibles.swift"; sourceTree = "<group>"; };
+		"__PBXFileRef_Sources/Document+Operators.swift" /* Document+Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Document+Operators.swift"; sourceTree = "<group>"; };
+		"__PBXFileRef_Sources/Document+SequenceType.swift" /* Document+SequenceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Document+SequenceType.swift"; sourceTree = "<group>"; };
+		"__PBXFileRef_Sources/Document+Serialization.swift" /* Document+Serialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Document+Serialization.swift"; sourceTree = "<group>"; };
+		__PBXFileRef_Sources/Document.swift /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		__PBXFileRef_Sources/Element.swift /* Element.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
+		__PBXFileRef_Sources/Error.swift /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		__PBXFileRef_Sources/Helpers.swift /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		__PBXFileRef_Sources/ObjectId.swift /* ObjectId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectId.swift; sourceTree = "<group>"; };
+		"__PBXFileRef_Sources/Value+Comparing.swift" /* Value+Comparing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Value+Comparing.swift"; sourceTree = "<group>"; };
+		"__PBXFileRef_Sources/Value+Extraction.swift" /* Value+Extraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Value+Extraction.swift"; sourceTree = "<group>"; };
+		"__PBXFileRef_Sources/Value+LiteralConvertibles.swift" /* Value+LiteralConvertibles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Value+LiteralConvertibles.swift"; sourceTree = "<group>"; };
+		"__PBXFileRef_Sources/Value+Serialization.swift" /* Value+Serialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Value+Serialization.swift"; sourceTree = "<group>"; };
+		"__PBXFileRef_Sources/Value+Subscript.swift" /* Value+Subscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Value+Subscript.swift"; sourceTree = "<group>"; };
+		__PBXFileRef_Sources/Value.swift /* Value.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Value.swift; sourceTree = "<group>"; };
+		__PBXFileRef_Sources/ValueConvertible.swift /* ValueConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueConvertible.swift; sourceTree = "<group>"; };
+		__PBXFileRef_Tests/BSON/BSONInternalTests.swift /* BSONInternalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSONInternalTests.swift; sourceTree = "<group>"; };
+		__PBXFileRef_Tests/BSON/BSONPublicTests.swift /* BSONPublicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSONPublicTests.swift; sourceTree = "<group>"; };
+		"_____Product_BSON" /* libBSON.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libBSON.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		"_____Product_BSONTestSuite" /* BSON.testsuite.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = BSON.testsuite.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		"___LinkPhase_BSON" /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		"___LinkPhase_BSONTestSuite" /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				_LinkFileRef_BSON /* libBSON.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		Dependencies_ /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		TestProducts_ /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				"_____Product_BSONTestSuite" /* BSON.testsuite.xctest */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
+		"___RootGroup_" = {
+			isa = PBXGroup;
+			children = (
+				__PBXFileRef_Package.swift /* Package.swift */,
+				"_____Sources_" /* Sources */,
+				Dependencies_ /* Dependencies */,
+				"_______Tests_" /* Tests */,
+				"____Products_" /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		"____Products_" /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				TestProducts_ /* Tests */,
+				"_____Product_BSON" /* libBSON.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		"_____Sources_" /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				"_______Group_BSON" /* BSON */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		"_______Group_BSON" /* BSON */ = {
+			isa = PBXGroup;
+			children = (
+				"__PBXFileRef_Sources/Document+LiteralConvertibles.swift" /* Document+LiteralConvertibles.swift */,
+				"__PBXFileRef_Sources/Document+Operators.swift" /* Document+Operators.swift */,
+				"__PBXFileRef_Sources/Document+SequenceType.swift" /* Document+SequenceType.swift */,
+				"__PBXFileRef_Sources/Document+Serialization.swift" /* Document+Serialization.swift */,
+				__PBXFileRef_Sources/Document.swift /* Document.swift */,
+				__PBXFileRef_Sources/Element.swift /* Element.swift */,
+				__PBXFileRef_Sources/Error.swift /* Error.swift */,
+				__PBXFileRef_Sources/Helpers.swift /* Helpers.swift */,
+				__PBXFileRef_Sources/ObjectId.swift /* ObjectId.swift */,
+				"__PBXFileRef_Sources/Value+Comparing.swift" /* Value+Comparing.swift */,
+				"__PBXFileRef_Sources/Value+Extraction.swift" /* Value+Extraction.swift */,
+				"__PBXFileRef_Sources/Value+LiteralConvertibles.swift" /* Value+LiteralConvertibles.swift */,
+				"__PBXFileRef_Sources/Value+Serialization.swift" /* Value+Serialization.swift */,
+				"__PBXFileRef_Sources/Value+Subscript.swift" /* Value+Subscript.swift */,
+				__PBXFileRef_Sources/Value.swift /* Value.swift */,
+				__PBXFileRef_Sources/ValueConvertible.swift /* ValueConvertible.swift */,
+			);
+			name = BSON;
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		"_______Group_BSONTestSuite" /* BSON.testsuite */ = {
+			isa = PBXGroup;
+			children = (
+				__PBXFileRef_Tests/BSON/BSONInternalTests.swift /* BSONInternalTests.swift */,
+				__PBXFileRef_Tests/BSON/BSONPublicTests.swift /* BSONPublicTests.swift */,
+			);
+			name = BSON.testsuite;
+			path = Tests/BSON;
+			sourceTree = "<group>";
+		};
+		"_______Tests_" /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				"_______Group_BSONTestSuite" /* BSON.testsuite */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		"______Target_BSON" /* BSON */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = "_______Confs_BSON" /* Build configuration list for PBXNativeTarget "BSON" */;
+			buildPhases = (
+				CompilePhase_BSON /* Sources */,
+				"___LinkPhase_BSON" /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BSON;
+			productName = BSON;
+			productReference = "_____Product_BSON" /* libBSON.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		"______Target_BSONTestSuite" /* BSON.testsuite */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = "_______Confs_BSONTestSuite" /* Build configuration list for PBXNativeTarget "BSON.testsuite" */;
+			buildPhases = (
+				CompilePhase_BSONTestSuite /* Sources */,
+				"___LinkPhase_BSONTestSuite" /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				__Dependency_BSON /* PBXTargetDependency */,
+			);
+			name = BSON.testsuite;
+			productName = BSONTestSuite;
+			productReference = "_____Product_BSONTestSuite" /* BSON.testsuite.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		__RootObject_ /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 9999;
+			};
+			buildConfigurationList = "___RootConfs_" /* Build configuration list for PBXProject "BSON" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = "___RootGroup_";
+			productRefGroup = "____Products_" /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				"______Target_BSON" /* BSON */,
+				"______Target_BSONTestSuite" /* BSON.testsuite */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CompilePhase_BSON /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				"__src_cc_ref_Sources/Document+LiteralConvertibles.swift" /* Document+LiteralConvertibles.swift in Sources */,
+				"__src_cc_ref_Sources/Document+Operators.swift" /* Document+Operators.swift in Sources */,
+				"__src_cc_ref_Sources/Document+SequenceType.swift" /* Document+SequenceType.swift in Sources */,
+				"__src_cc_ref_Sources/Document+Serialization.swift" /* Document+Serialization.swift in Sources */,
+				__src_cc_ref_Sources/Document.swift /* Document.swift in Sources */,
+				__src_cc_ref_Sources/Element.swift /* Element.swift in Sources */,
+				__src_cc_ref_Sources/Error.swift /* Error.swift in Sources */,
+				__src_cc_ref_Sources/Helpers.swift /* Helpers.swift in Sources */,
+				__src_cc_ref_Sources/ObjectId.swift /* ObjectId.swift in Sources */,
+				"__src_cc_ref_Sources/Value+Comparing.swift" /* Value+Comparing.swift in Sources */,
+				"__src_cc_ref_Sources/Value+Extraction.swift" /* Value+Extraction.swift in Sources */,
+				"__src_cc_ref_Sources/Value+LiteralConvertibles.swift" /* Value+LiteralConvertibles.swift in Sources */,
+				"__src_cc_ref_Sources/Value+Serialization.swift" /* Value+Serialization.swift in Sources */,
+				"__src_cc_ref_Sources/Value+Subscript.swift" /* Value+Subscript.swift in Sources */,
+				__src_cc_ref_Sources/Value.swift /* Value.swift in Sources */,
+				__src_cc_ref_Sources/ValueConvertible.swift /* ValueConvertible.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CompilePhase_BSONTestSuite /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				__src_cc_ref_Tests/BSON/BSONInternalTests.swift /* BSONInternalTests.swift in Sources */,
+				__src_cc_ref_Tests/BSON/BSONPublicTests.swift /* BSONPublicTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		__Dependency_BSON /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "______Target_BSON" /* BSON */;
+			targetProxy = 0AD853361CD17AB1000AA614 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		_ReleaseConf_BSON /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_INSTALL_NAME_BASE = "$(CONFIGURATION_BUILD_DIR)";
+				ENABLE_TESTABILITY = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_SWIFT_FLAGS = "-DXcode";
+				PRODUCT_MODULE_NAME = BSON;
+				PRODUCT_NAME = "lib$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		_ReleaseConf_BSONTestSuite /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_SWIFT_FLAGS = "-DXcode";
+				PRODUCT_MODULE_NAME = BSONTestSuite;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		"___DebugConf_BSON" /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_INSTALL_NAME_BASE = "$(CONFIGURATION_BUILD_DIR)";
+				ENABLE_TESTABILITY = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_SWIFT_FLAGS = "-DXcode";
+				PRODUCT_MODULE_NAME = BSON;
+				PRODUCT_NAME = "lib$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		"___DebugConf_BSONTestSuite" /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_SWIFT_FLAGS = "-DXcode";
+				PRODUCT_MODULE_NAME = BSONTestSuite;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		"_____Release_" /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		"_______Debug_" /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		"___RootConfs_" /* Build configuration list for PBXProject "BSON" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				"_______Debug_" /* Debug */,
+				"_____Release_" /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		"_______Confs_BSON" /* Build configuration list for PBXNativeTarget "BSON" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				"___DebugConf_BSON" /* Debug */,
+				_ReleaseConf_BSON /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		"_______Confs_BSONTestSuite" /* Build configuration list for PBXNativeTarget "BSON.testsuite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				"___DebugConf_BSONTestSuite" /* Debug */,
+				_ReleaseConf_BSONTestSuite /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = __RootObject_ /* Project object */;
+}
