@@ -59,8 +59,8 @@ let temperature = document["temperature"].double
 
 ```swift
 let document: Document = [
-            "subdocument": ["hello": "sample"],
-            "anothersubdocument": [81.2, "cheese"] // an array is also an embedded document
+            "subdocument": ["hello": "sample"] as Document,
+            "anothersubdocument": [81.2, "cheese"] as Document // an array is also an embedded document
         ]
 ```
 
