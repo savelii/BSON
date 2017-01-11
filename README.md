@@ -48,7 +48,7 @@ let data = document.bsonData // Array of [UInt8]
 let sameDocument = try! Document(data: data)
 
 // Do something with the data
-let temperature = document["temperature"].double
+let temperature = document["temperature"] as Double?
 
 // Use the temperature
 ```
@@ -65,8 +65,8 @@ let document: Document = [
 #### Comparing
 
 ```swift
-document["double"] == document["int64"] // true for .double(0) == .int64(0)
-document["double"] === document["int64"] // false for .double(0) === .int64(0)
+document["double"] == document["int64"] // true for Double(0) == Int64(0)
+document["double"] === document["int64"] // false for Double(0) === Int64(0)
 ```
 
 ### Supported Types
