@@ -447,9 +447,13 @@ extension Document {
                     let options = try? String.instantiateFromCString(bytes: optionsData + [0x00]) else {
                         return nil
                 }
-                
-                return try RegularExpression(pattern: pattern, options: regexOptions(fromString: options))
-            case .javascriptCode:
+
+		#if swift(>=3.1)                
+                	return try NSRegularExpression(pattern: pattern, options: regexOptions(fromString: options))            
+		#else
+			return try RegularExpression(pattern: pattern, options: regexOptions(fromString: options))
+		#endif
+	    case .javascriptCode:
                 guard let code = try? String.instantiate(bytes: Array(storage[position..<storage.endIndex])) else {
                     return nil
                 }

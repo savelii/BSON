@@ -379,7 +379,11 @@ extension Document {
                         #endif
                     } else if let pattern = document["$regex"] as String?, let options = document["$options"] as String? {
                         // RegularExpression
-                        return try? RegularExpression(pattern: pattern, options: regexOptions(fromString: options))
+		#if swift(>=3.1)			
+			return try? NSRegularExpression(pattern: pattern, options: regexOptions(fromString: options))
+		#else
+       			return try? RegularExpression(pattern: pattern, options: regexOptions(fromString: options))
+		#endif
                     } else if let code = document["$code"] as String?, let scope = document["$scope"] as Document? {
                         // JS with scope
                         return JavascriptCode(code, withScope: scope)

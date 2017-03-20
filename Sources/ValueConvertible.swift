@@ -46,27 +46,51 @@ extension ValueConvertible {
     }
 }
 
-func regexOptions(fromString s: String) -> RegularExpression.Options {
-    var options: RegularExpression.Options = []
-    
+#if swift(>=3.1)
+func regexOptions(fromString s: String) -> NSRegularExpression.Options {
+    var options: NSRegularExpression.Options = []
+
     if s.contains("i") {
         options.update(with: .caseInsensitive)
     }
-    
+
     if s.contains("m") {
         options.update(with: .anchorsMatchLines)
     }
-    
+
     if s.contains("x") {
         options.update(with: .allowCommentsAndWhitespace)
     }
-    
+
     if s.contains("s") {
         options.update(with: .dotMatchesLineSeparators)
     }
-    
+
     return options
 }
+#else
+func regexOptions(fromString s: String) -> RegularExpression.Options {
+    var options: RegularExpression.Options = []
+
+    if s.contains("i") {
+        options.update(with: .caseInsensitive)
+    }
+
+    if s.contains("m") {
+        options.update(with: .anchorsMatchLines)
+    }
+
+    if s.contains("x") {
+        options.update(with: .allowCommentsAndWhitespace)
+    }
+
+    if s.contains("s") {
+        options.update(with: .dotMatchesLineSeparators)
+    }
+
+    return options
+}            
+#endif
 
 public protocol BinaryConvertible: ValueConvertible {
     func makeBinary() -> Binary
@@ -441,6 +465,43 @@ extension Data : ValueConvertible {
     }
 }
 
+#if swift(>=3.1)
+extension NSRegularExpression : BSONPrimitive {
+    public var typeIdentifier: UInt8 {
+        return 0x0B
+    }
+    
+    public func makeBSONBinary() -> [UInt8] {
+        return self.pattern.cStringBytes + makeOptions().cStringBytes
+    }
+
+    public func makeExtendedJSON() -> String {
+        return "{\"$regex\":\"\(escape(self.pattern))\",\"$options\":\"\(escape(makeOptions()))\"}"
+    }
+    
+    func makeOptions() -> String {
+        var options = ""
+        
+        if self.options.contains(.caseInsensitive) {
+            options.append("i")
+        }
+        
+        if self.options.contains(.anchorsMatchLines) {
+            options.append("m")
+        }
+        
+        if self.options.contains(.allowCommentsAndWhitespace) {
+            options.append("x")
+        }
+        
+        if self.options.contains(.dotMatchesLineSeparators) {
+            options.append("s")
+        }
+        
+        return options
+    }
+}
+#else
 extension RegularExpression : BSONPrimitive {
     public var typeIdentifier: UInt8 {
         return 0x0B
@@ -476,3 +537,4 @@ extension RegularExpression : BSONPrimitive {
         return options
     }
 }
+#endif

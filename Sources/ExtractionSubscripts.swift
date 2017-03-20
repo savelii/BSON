@@ -152,7 +152,16 @@ extension Document {
             self[raw: parts] = newValue
         }
     }
-    
+#if swift(>=3.1)
+    public subscript(parts: SubscriptExpressionType...) -> NSRegularExpression? {
+        get {
+            return self[raw: parts] as? NSRegularExpression
+        }
+        set {
+            self[raw: parts] = newValue
+        }
+    }    
+#else
     public subscript(parts: SubscriptExpressionType...) -> RegularExpression? {
         get {
             return self[raw: parts] as? RegularExpression
@@ -161,6 +170,7 @@ extension Document {
             self[raw: parts] = newValue
         }
     }
+#endif
 }
 
 extension Document {
@@ -289,7 +299,16 @@ extension Document {
             self[raw: parts] = newValue
         }
     }
-    
+#if swift(>=3.1)
+    public subscript(parts: [SubscriptExpressionType]) -> NSRegularExpression? {
+        get {
+            return self[raw: parts] as? NSRegularExpression
+        }
+        set {
+            self[raw: parts] = newValue
+        }
+    }
+#else
     public subscript(parts: [SubscriptExpressionType]) -> RegularExpression? {
         get {
             return self[raw: parts] as? RegularExpression
@@ -298,4 +317,5 @@ extension Document {
             self[raw: parts] = newValue
         }
     }
+#endif
 }
